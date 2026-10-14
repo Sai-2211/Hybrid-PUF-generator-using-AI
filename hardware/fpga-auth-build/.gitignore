@@ -1,0 +1,11 @@
+# Local measurements, including enrolled reference responses.
+records/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+# Environments and compiler outputs.
+.venv/
+__pycache__/
+*.py[cod]
+fpga/impl/

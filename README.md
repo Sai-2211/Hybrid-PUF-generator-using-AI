@@ -1,6 +1,6 @@
 # IDP — AI-Enhanced Hybrid PUF
 
-Review-II preparation and an educational PUF simulation with a PyTorch logistic-regression attacker.
+Review-II preparation, an educational PUF simulation with a PyTorch logistic-regression attacker, and an experimental FPGA authentication build.
 
 ## Start here
 
@@ -9,6 +9,14 @@ Review-II preparation and an educational PUF simulation with a PyTorch logistic-
 - [Measured attack results](source/attack_results.csv)
 - [Configuration and metrics](source/results.json)
 - [Synthetic challenge-response dataset](source/crps.csv)
+
+## Hardware authentication reference
+
+- [Tang Nano 1K + ESP32-C3 build package](hardware/fpga-auth-build/README.md)
+- [Detailed wiring and programming guide](hardware/fpga-auth-build/BUILD_GUIDE.md)
+- [Verification status and remaining hardware work](hardware/fpga-auth-build/VALIDATION.md)
+
+This first hardware phase implements the reference structure for a single 64-stage Arbiter PUF, an ESP32-C3 USB/UART bridge, and a laptop enrollment/authentication server. The pin assignments and software checks are documented. Matched FPGA placement/routing, vendor-tool compilation, and physical board measurements remain required; no qualified bitstream or measured hardware security result is supplied. It is not the finished hybrid or AI defense.
 
 ## Install and run
 
@@ -38,4 +46,4 @@ This is the same logistic-regression algorithm, now implemented with PyTorch. It
 
 ## Scope
 
-The prototype simulates a 64-stage Arbiter PUF and a three-chain XOR comparison. All results are synthetic. The full hybrid, Ring-Oscillator module, FPGA implementation and AI reliability controller are future work. Low accuracy from one simple attack is not proof of security.
+The prototype simulates a 64-stage Arbiter PUF and a three-chain XOR comparison. All results are synthetic. The full hybrid, Ring-Oscillator module and AI reliability controller are future work. A board-specific FPGA reference design is now included; physical implementation and qualification remain pending. Low accuracy from one simple attack is not proof of security.
